@@ -2,11 +2,34 @@
     "cards": [
         {
             "tipoInteracao": "monitoramento",
-            "especialidade": "mnfermeiro",
+            "especialidade": "enfermeiro",
             "nomeInteracao": "monitoramento_fisioterapeuta",
             "modalidade": "rotina",
             "estabelecimento": "pronto socorro",
-            "data": "27/05/2020"
+            "dia": 12,
+            "mes": "03",
+            "ano": "2020" 
+        },
+        {
+            "tipoInteracao": "exame",
+            "especialidade": "enfermeiro",
+            "nomeInteracao": "exame_sangue",
+            "modalidade": "rotina",
+            "estabelecimento": "pronto socorro",
+            "data": "27/05/2020",
+            "dia": 27,
+            "mes": "03",
+            "ano": "2020" 
+        },
+        {
+            "tipoInteracao": "cirurgia",
+            "especialidade": "cardiologia",
+            "nomeInteracao": "cirurgia_cardiaca",
+            "modalidade": "urgencia",
+            "estabelecimento": "hospital",
+            "dia": 30,
+            "mes": "10",
+            "ano": "2020" 
         }
     ]
 }

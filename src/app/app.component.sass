@@ -1,0 +1,137 @@
+$timeline-color: #ee4d4d
+
+*, *:before, *:after
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+body, html
+    color: #726f77
+    height: 100%
+
+body
+    color: #726f77
+    font-size: 14px
+    line-height: 20px
+    margin: 0
+    padding: 0
+
+a
+    text-decoration: none
+
+.container 
+    font-family: helvetica, arial, tahoma, sans-serif
+    margin: 0 auto;
+    max-width: 1100px;
+    
+.timeline 
+    margin: 30px auto
+    padding: 0 10px
+    position: relative
+    width: 100%
+
+    &:before
+        background: #{$timeline-color}
+        content: ""
+        height: 100%
+        left: 50%
+        position: absolute
+        top: 0
+        width: 3px
+
+    &:after 
+        clear: both
+        content: ''
+        display: table
+        width: 100%
+	
+.card 
+    list-style-type: none
+    margin-bottom: 50px
+    position: relative
+
+    &:after, &:before
+        clear: both;
+        content: '';
+        display: block;
+        width: 100%;
+    
+    .card-badge
+        background: #{$timeline-color}
+        border-radius: 50%
+        color: #fff
+        font-weight: bold
+        height: 50px
+        left: 50%
+        line-height: 50px
+        margin-left: -23px
+        overflow: hidden
+        position: absolute
+        text-align: center
+        top: 0
+        width: 50px
+
+    .card-content
+        background: #f9f9f9
+        border-radius: 5px
+        box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1)
+        padding: 20px
+        width: 45%;
+
+        &:before
+            border-bottom: 7px solid transparent
+            border-left: 7px solid #{$timeline-color}
+            border-top: 7px solid transparent
+            content: ''
+            height: 0
+            left: 45%
+            position: absolute
+            top: 20px
+            width: 0
+
+        h3
+            border-radius: 4px 4px 0 0;
+            background: #{$timeline-color}
+            color: #fff
+            font-weight: 300
+            margin: -20px -20px 0 -20px
+            padding: 15px
+            text-transform: uppercase
+
+        p 
+            display: grid
+            margin-bottom: 0
+
+        &.right
+            float: right
+
+            &:before
+                border-left: 0;
+                border-right: 7px solid #{$timeline-color};
+                content: '';
+                left: inherit;
+                right: 45%;
+
+
+@media screen and (max-width: 768px) 
+	.timeline 
+		margin: 30px
+		padding: 0
+    	width: 90%
+		
+		&:before 
+			left: 0
+		
+		.card 
+			.card-content 
+				width: 90%
+				float: right
+				
+				&:before, &.right:before 
+					border-left: 0
+					border-right: 7px solid #{$timeline-color}
+					left: 10%
+					margin-left: -6px
+
+			.card-badge 
+				left: 0
