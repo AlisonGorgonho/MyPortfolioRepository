@@ -1,0 +1,12 @@
+{
+    "cards": [
+        {
+            "tipoInteracao": "monitoramento",
+            "especialidade": "mnfermeiro",
+            "nomeInteracao": "monitoramento_fisioterapeuta",
+            "modalidade": "rotina",
+            "estabelecimento": "pronto socorro",
+            "data": "27/05/2020"
+        }
+    ]
+}
