@@ -28,7 +28,7 @@
             ],
             "styles": [
               "src/styles.sass",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -66,7 +66,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "MyPortfolioRepository:build",
-            "proxyConfig": "proxy.conf.json",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
