@@ -1,17 +1,16 @@
-$timeline-color: #ee4d4d
+$timeline-color: #662783
+$timeline-color-light: #ad90ba
 
 *, *:before, *:after
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    box-sizing: border-box
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
 
 body, html
-    color: #726f77
     height: 100%
 
 body
-    color: #726f77
-    font-size: 14px
+    font-family: Roboto, arial, tahoma, sans-serif
     line-height: 20px
     margin: 0
     padding: 0
@@ -19,25 +18,59 @@ body
 a
     text-decoration: none
 
-.container 
-    font-family: helvetica, arial, tahoma, sans-serif
-    margin: 0 auto;
-    max-width: 1100px;
+.timeline-nav
+    margin-bottom: 20px
+
+    .nav
+        border-bottom: 5px solid #{$timeline-color-light}
+        display: flex
+        justify-content: space-between
+        margin-bottom: 20px
+
+        .nav-item
+            align-items: flex-end
+            display: flex
+            padding-bottom: 25px
+            position: relative
+
+            a
+                color: $timeline-color
+
+            a:after
+                background: #662783
+                border: 4px solid #fff
+                border-radius: 50%
+                bottom: -15px
+                content: ''
+                display: block
+                height: 25px
+                left: 50%
+                position: absolute
+                transition: all 250ms ease
+                width: 25px
+                z-index: 1
+
+            a:hover:after
+                border-color: #{$timeline-color}
+        
+            a:last-child 
+                margin-right: 0
     
-.timeline 
-    margin: 30px auto
+.timeline-cards
+    color: #575757
+    margin: 10px auto 
     padding: 0 10px
     position: relative
     width: 100%
 
     &:before
-        background: #{$timeline-color}
+        background: #{$timeline-color-light}
         content: ""
         height: 100%
         left: 50%
         position: absolute
         top: 0
-        width: 3px
+        width: 4px
 
     &:after 
         clear: both
@@ -45,93 +78,113 @@ a
         display: table
         width: 100%
 	
-.card 
-    list-style-type: none
-    margin-bottom: 50px
-    position: relative
+    .timeline-card 
+        list-style-type: none
+        position: relative
 
-    &:after, &:before
-        clear: both;
-        content: '';
-        display: block;
-        width: 100%;
-    
-    .card-badge
-        background: #{$timeline-color}
-        border-radius: 50%
-        color: #fff
-        font-weight: bold
-        height: 50px
-        left: 50%
-        line-height: 50px
-        margin-left: -23px
-        overflow: hidden
-        position: absolute
-        text-align: center
-        top: 0
-        width: 50px
-
-    .card-content
-        background: #f9f9f9
-        border-radius: 5px
-        box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1)
-        padding: 20px
-        width: 45%;
-
-        &:before
-            border-bottom: 7px solid transparent
-            border-left: 7px solid #{$timeline-color}
-            border-top: 7px solid transparent
+        &:after, &:before
+            clear: both
             content: ''
-            height: 0
-            left: 45%
-            position: absolute
-            top: 20px
-            width: 0
-
-        h3
-            border-radius: 4px 4px 0 0;
-            background: #{$timeline-color}
-            color: #fff
-            font-weight: 300
-            margin: -20px -20px 0 -20px
-            padding: 15px
-            text-transform: uppercase
-
-        p 
-            display: grid
-            margin-bottom: 0
-
-        &.right
-            float: right
+            display: block
+            width: 100%
+        
+        .timeline-card-content
+            background: #fafafa
+            border-radius: 2px
+            box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1)
+            font-size: 14px
+            margin-bottom: 15px
+            padding: 20px
+            width: 45%
 
             &:before
-                border-left: 0;
-                border-right: 7px solid #{$timeline-color};
-                content: '';
-                left: inherit;
-                right: 45%;
+                border-bottom: 7px solid transparent
+                border-left: 7px solid #{$timeline-color}
+                border-top: 7px solid transparent
+                content: ''
+                height: 0
+                left: 45%
+                position: absolute
+                top: 20px
+                width: 0
 
+            h3
+                border-radius: 2px 2px 0 0
+                background: #{$timeline-color}
+                color: #fff
+                font-size: 18px
+                font-weight: normal
+                margin: -20px -20px 15px -20px
+                padding: 15px
+                text-transform: uppercase
+
+            .info .label
+                font-weight: bold
+
+            &.right
+                float: right
+
+                &:before
+                    border-left: 0
+                    border-right: 7px solid #{$timeline-color}
+                    content: ''
+                    left: inherit
+                    right: 45%
+                    
+        .timeline-badge
+            background: #{$timeline-color}
+            border-radius: 50%
+            color: #fff
+            font-weight: bold
+            height: 50px
+            left: 50%
+            line-height: 50px
+            margin-left: -23px
+            overflow: hidden
+            position: absolute
+            text-align: center
+            top: 0
+            width: 50px
 
 @media screen and (max-width: 768px) 
-	.timeline 
-		margin: 30px
-		padding: 0
-    	width: 90%
-		
-		&:before 
-			left: 0
-		
-		.card 
-			.card-content 
-				width: 90%
-				float: right
-				
-				&:before, &.right:before 
-					border-left: 0
-					border-right: 7px solid #{$timeline-color}
-					left: 10%
-					margin-left: -6px
+    .timeline-nav .nav
+        flex-direction: column
+        border-bottom: none
+        border-left: 3px solid #{$timeline-color-light}
+    
+        .nav-item a
+            display: flex
+            flex-direction: row-reverse
+            margin-left: 25px
+            position: relative
+    
+            &:after
+                left: -26px
+                bottom: 0
 
-			.card-badge 
-				left: 0
+    .timeline-cards
+        padding: 0
+        width: 90%
+        margin: 5px auto
+		
+        &:before 
+            left: 13px
+            top: 10px
+		
+        .timeline-card
+            .timeline-card-content
+                float: right
+                width: 90%
+				
+                &:before, &.right:before 
+                    border-left: 0
+                    border-right: 7px solid #{$timeline-color}
+                    left: 10%
+                    margin-left: -6px
+
+            .timeline-badge 
+                height: 35px
+                left: 20px
+                line-height: 35px
+                top: 10px
+                width: 35px

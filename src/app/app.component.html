@@ -1,19 +1,66 @@
 <div class="container">
-  <ul class="timeline">
-    <li class="card" *ngFor="let card of cards | async">
-      <div class="card-badge">{{card.dia}}</div>
-      <div class="card-content" [ngClass]="{'right': card.tipoInteracao=='exame'}">
-          <h3>{{card.tipoInteracao}}</h3>
-          <p>
-              <span>Especialidade: {{card.especialidade}}</span>
-              <span>Tipo: {{card.nomeInteracao}}</span>
-              <span>Modalidade: {{card.modalidade}}</span>
-              <span>Estabelecimento: {{card.estabelecimento}}</span>
-              <span>Data: {{card.dia}}/{{card.mes}}/{{card.ano}}</span>
-          </p>
+  <div class="timeline-nav">
+    <ul class="nav">
+      <li class="nav-item"><a href="#" data-toggle="modal" data-target="#modal-janeiro">Janeiro</a></li>
+      <li class="nav-item"><a href="#">Fevereiro</a></li>
+      <li class="nav-item"><a href="#">Março</a></li>
+      <li class="nav-item"><a href="#">Abril</a></li>
+      <li class="nav-item"><a href="#">Maio</a></li>
+      <li class="nav-item"><a href="#">Junho</a></li>
+      <li class="nav-item"><a href="#">Julho</a></li>
+      <li class="nav-item"><a href="#">Agosto</a></li>
+      <li class="nav-item"><a href="#">Setembro</a></li>
+      <li class="nav-item"><a href="#">Outubro</a></li>
+      <li class="nav-item"><a href="#">Novembro</a></li>
+      <li class="nav-item"><a href="#">Dezembro</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-janeiro" tabindex="-1" role="dialog" aria-labelledby="modal-janeiro" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Janeiro</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-    </li>
-  </ul>
+      <div class="modal-body">
+        <ul class="timeline-cards">
+          <li class="timeline-card" *ngFor="let card of cards | async">
+            <div class="timeline-badge">{{card.dia}}</div>
+            <div class="timeline-card-content" [ngClass]="{'right': card.tipoInteracao=='exame'}">
+                <h3>{{card.tipoInteracao}}</h3>
+                <div class="info">
+                    <div>
+                        <span class="label">Especialidade: </span>
+                        <span>{{card.especialidade}}</span>
+                    </div>
+                    <div>
+                        <span class="label">Tipo: </span>
+                        <span>{{card.nomeInteracao}}</span>
+                    </div>
+                    <div>
+                        <span class="label">Modalidade: </span>
+                        <span>{{card.modalidade}}</span>
+                    </div>
+                    <div>
+                        <span class="label">Estabelecimento: </span> 
+                        <span>{{card.estabelecimento}}</span>
+                    </div>
+                    <div>
+                        <span class="label">Data: </span> 
+                        <span>{{card.dia}}/{{card.mes}}/{{card.ano}}</span>
+                    </div>
+                </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
